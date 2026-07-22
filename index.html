@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Biscoito Catarine - Tradição, carinho e sabor em cada mordida. Biscoitos artesanais, bolachas e cuscas feitas com amor.">
+    <title>Biscoito Catarine | Tradição e Sabor em Cada Mordida</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --cor-primaria: #8B4513;
+            --cor-secundaria: #D2691E;
+            --cor-terciaria: #CD853F;
+            --cor-creme: #F5E6D3;
+            --cor-bege: #FAEBD7;
+            --cor-caramelo: #D2B48C;
+            --cor-dourado: #DAA520;
+            --cor-terracota: #E2725B;
+            --cor-marrom-escuro: #5D4037;
+            --cor-texto: #4A4A4A;
+            --cor-branco: #FFFFFF;
+            --sombra-suave: 0 4px 20px rgba(0,0,0,0.1);
+            --sombra-media: 0 8px 30px rgba(0,0,0,0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--cor-texto);
+            background-color: var(--cor-bege);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        /* Navegação */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--sombra-suave);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--cor-primaria);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo i {
+            color: var(--cor-terracota);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--cor-texto);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--cor-secundaria);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--cor-secundaria);
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--cor-primaria);
+            background: none;
+            border: none;
+        }
+
+        .mobile-menu.ativo {
+            color: var(--cor-secundaria);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            min-height: 90vh;
+            background: linear-gradient(135deg, rgba(139,69,19,0.7) 0%, rgba(210,105,30,0.7) 100%), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23F5E6D3" width="1200" height="800"/><path fill="%23D2B48C" d="M0 400h1200v400H0z" opacity="0.3"/><circle fill="%23DAA520" cx="200" cy="200" r="150" opacity="0.2"/><circle fill="%23E2725B" cx="1000" cy="600" r="200" opacity="0.2"/></svg>');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--cor-branco);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></svg>');
+            background-size: 100px 100px;
+            opacity: 0.3;
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 2rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .hero-subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .hero-text {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.8s both;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--cor-terracota);
+            color: var(--cor-branco);
+            box-shadow: 0 4px 15px rgba(226,114,91,0.4);
+        }
+
+        .btn-primary:hover {
+            background: #c96450;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(226,114,91,0.6);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--cor-branco);
+            border: 2px solid var(--cor-branco);
+        }
+
+        .btn-secondary:hover {
+            background: var(--cor-branco);
+            color: var(--cor-primaria);
+            transform: translateY(-3px);
+        }
+
+        /* Seções Gerais */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            color: var(--cor-primaria);
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--cor-secundaria), var(--cor-terracota));
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--cor-texto);
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Nossa História */
+        .historia {
+            background: var(--cor-branco);
+        }
+
+        .historia-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .historia-texto {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--cor-texto);
+        }
+
+        .historia-imagem {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--sombra-media);
+            height: 500px;
+            background: linear-gradient(135deg, var(--cor-creme) 0%, var(--cor-caramelo) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .historia-imagem-placeholder {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .historia-imagem i {
+            font-size: 8rem;
+            color: var(--cor-dourado);
+            opacity: 0.5;
+        }
+
+        /* Produtos */
+        .produtos {
+            background: linear-gradient(180deg, var(--cor-bege) 0%, var(--cor-creme) 100%);
+        }
+
+        .filtros {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filtro-btn {
+            padding: 0.6rem 1.5rem;
+            border: 2px solid var(--cor-primaria);
+            background: transparent;
+            color: var(--cor-primaria);
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .filtro-btn:hover,
+        .filtro-btn.ativo {
+            background: var(--cor-primaria);
+            color: var(--cor-branco);
+        }
+
+        .produtos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .produto-card {
+            background: var(--cor-branco);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--sombra-suave);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .produto-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--sombra-media);
+        }
+
+        .produto-imagem {
+            height: 250px;
+            background: linear-gradient(135deg, var(--cor-creme) 0%, var(--cor-caramelo) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .produto-imagem i {
+            font-size: 5rem;
+            color: var(--cor-dourado);
+            opacity: 0.6;
+        }
+
+        .produto-info {
+            padding: 1.5rem;
+        }
+
+        .produto-categoria {
+            color: var(--cor-secundaria);
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .produto-nome {
+            font-size: 1.4rem;
+            color: var(--cor-primaria);
+            margin: 0.5rem 0;
+        }
+
+        .produto-descricao {
+            font-size: 0.95rem;
+            color: var(--cor-texto);
+            margin-bottom: 1rem;
+        }
+
+        .produto-peso {
+            color: var(--cor-terracota);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        /* Seção Cuscas */
+        .cuscas {
+            background: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-marrom-escuro) 100%);
+            color: var(--cor-branco);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cuscas::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+        }
+
+        .cuscas .section-title {
+            color: var(--cor-branco);
+        }
+
+        .cuscas .section-title::after {
+            background: var(--cor-dourado);
+        }
+
+        .cuscas-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cuscas-imagem {
+            height: 500px;
+            background: linear-gradient(135deg, var(--cor-caramelo) 0%, var(--cor-dourado) 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .cuscas-imagem i {
+            font-size: 10rem;
+            color: var(--cor-branco);
+            opacity: 0.3;
+        }
+
+        .cuscas-texto h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cuscas-texto p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        /* Por que escolher */
+        .diferenciais {
+            background: var(--cor-branco);
+        }
+
+        .diferenciais-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+        }
+
+        .diferencial-card {
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            border-radius: 15px;
+            background: var(--cor-bege);
+            transition: all 0.3s ease;
+        }
+
+        .diferencial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--sombra-suave);
+            background: var(--cor-creme);
+        }
+
+        .diferencial-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .diferencial-card h3 {
+            color: var(--cor-primaria);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        /* Galeria */
+        .galeria {
+            background: linear-gradient(180deg, var(--cor-creme) 0%, var(--cor-bege) 100%);
+        }
+
+        .galeria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .galeria-item {
+            height: 300px;
+            background: linear-gradient(135deg, var(--cor-caramelo) 0%, var(--cor-dourado) 100%);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .galeria-item i {
+            font-size: 4rem;
+            color: var(--cor-branco);
+            opacity: 0.5;
+        }
+
+        .galeria-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0);
+            transition: all 0.3s ease;
+        }
+
+        .galeria-item:hover::before {
+            background: rgba(139,69,19,0.4);
+        }
+
+        .galeria-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* Revendedores */
+        .revendedores {
+            background: var(--cor-branco);
+            text-align: center;
+        }
+
+        .revendedores-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .revendedores p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Contato */
+        .contato {
+            background: linear-gradient(135deg, var(--cor-bege) 0%, var(--cor-creme) 100%);
+        }
+
+        .contato-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contato-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contato-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: var(--cor-branco);
+            border-radius: 10px;
+            box-shadow: var(--sombra-suave);
+        }
+
+        .contato-item i {
+            font-size: 1.8rem;
+            color: var(--cor-secundaria);
+        }
+
+        .contato-item h3 {
+            color: var(--cor-primaria);
+            margin-bottom: 0.3rem;
+        }
+
+        .contato-mapa {
+            height: 400px;
+            background: linear-gradient(135deg, var(--cor-caramelo) 0%, var(--cor-dourado) 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--sombra-suave);
+        }
+
+        .contato-mapa i {
+            font-size: 5rem;
+            color: var(--cor-branco);
+            opacity: 0.5;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--cor-marrom-escuro);
+            color: var(--cor-branco);
+            padding: 3rem 2rem 1rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--cor-dourado);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: var(--cor-creme);
+            text-decoration: none;
+            line-height: 1.8;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--cor-dourado);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .footer-social a {
+            width: 45px;
+            height: 45px;
+            background: var(--cor-primaria);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            background: var(--cor-secundaria);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: var(--cor-creme);
+            opacity: 0.8;
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            color: var(--cor-branco);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+            cursor: pointer;
+            z-index: 999;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(37,211,102,0.6);
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--cor-branco);
+                padding: 1rem;
+                box-shadow: var(--sombra-suave);
+                gap: 0;
+            }
+
+            .nav-links.ativo {
+                display: flex !important;
+            }
+
+            .nav-links li {
+                width: 100%;
+                padding: 0.5rem 0;
+                border-bottom: 1px solid rgba(0,0,0,0.1);
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .historia-content,
+            .cuscas-content,
+            .contato-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .historia-imagem,
+            .cuscas-imagem {
+                height: 300px;
+            }
+
+            section {
+                padding: 3rem 1rem;
+            }
+        }
+
+        /* Animações de Scroll */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navegação -->
+    <header id="header">
+        <nav>
+            <a href="#" class="logo">
+                <i class="fas fa-cookie-bite"></i>
+                Biscoito Catarine
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#historia">Nossa História</a></li>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#cuscas">Cuscas</a></li>
+                <li><a href="#revendedores">Revendedores</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+            <button class="mobile-menu" id="mobileMenu" aria-label="Menu móvel">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>Biscoito Catarine</h1>
+            <p class="hero-subtitle">O sabor que transforma momentos simples em memórias inesquecíveis.</p>
+            <p class="hero-text">Uma variedade de biscoitos, bolachas e cuscas feitos com carinho, tradição e muito sabor.</p>
+            <div class="hero-buttons">
+                <a href="#produtos" class="btn btn-primary">Conheça nossos produtos</a>
+                <a href="#contato" class="btn btn-secondary">Entre em contato</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nossa História -->
+    <section class="historia" id="historia">
+        <div class="container">
+            <h2 class="section-title">Uma história feita de sabor e tradição</h2>
+            <p class="section-subtitle">Conheça nossa trajetória e o que nos torna especiais</p>
+            
+            <div class="historia-content">
+                <div class="historia-texto fade-in">
+                    <p>Na <strong>Biscoito Catarine</strong>, cada receita carrega um pouco da tradição, do carinho e das memórias que fazem parte da nossa história. Produzimos uma grande variedade de biscoitos e bolachas, além das tradicionais cuscas, sempre buscando preservar o sabor caseiro e a qualidade que conquistam gerações.</p>
+                    <br>
+                    <p>Nossa fábrica nasceu do sonho de levar até você aquele gostinho especial de comida feita em casa, com ingredientes selecionados e muito amor em cada etapa do processo. Cada produto é preparado com atenção aos detalhes, garantindo que cada mordida seja uma experiência única de sabor e qualidade.</p>
+                    <br>
+                    <p>Acreditamos que os melhores momentos da vida são aqueles compartilhados com quem amamos, e nada melhor do que um biscoito fresquinho para acompanhar esses momentos. É essa paixão que nos move todos os dias a criar produtos que aquecem o coração e alegram o paladar.</p>
+                </div>
+                <div class="historia-imagem fade-in">
+                    <div class="historia-imagem-placeholder">
+                        <i class="fas fa-bakery"></i>
+                        <p style="margin-top: 1rem; color: var(--cor-primaria); font-weight: 600;">Foto da Fábrica</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Produtos -->
+    <section class="produtos" id="produtos">
+        <div class="container">
+            <h2 class="section-title">Nossa Variedade</h2>
+            <p class="section-subtitle">Descubra o sabor perfeito para cada momento</p>
+            
+            <div class="filtros">
+                <button class="filtro-btn ativo" data-filtro="todos">Todos</button>
+                <button class="filtro-btn" data-filtro="bolachas">Bolachas</button>
+                <button class="filtro-btn" data-filtro="cuscas">Cuscas</button>
+                <button class="filtro-btn" data-filtro="especiais">Especiais</button>
+            </div>
+
+            <div class="produtos-grid" id="produtosGrid">
+                <!-- Produto 1 -->
+                <div class="produto-card fade-in" data-categoria="bolachas">
+                    <div class="produto-imagem">
+                        <i class="fas fa-cookie"></i>
+                    </div>
+                    <div class="produto-info">
+                        <span class="produto-categoria">Bolachas</span>
+                        <h3 class="produto-nome">Bolacha Confeitada</h3>
+                        <p class="produto-descricao">Deliciosas bolachas decoradas com glacê colorido, perfeitas para presentear ou saborear com café.</p>
+                        <span class="produto-peso">400g</span>
+                    </div>
+                </div>
+
+                <!-- Produto 2 -->
+                <div class="produto-card fade-in" data-categoria="cuscas">
+                    <div class="produto-imagem">
+                        <i class="fas fa-bread-slice"></i>
+                    </div>
+                    <div class="produto-info">
+                        <span class="produto-categoria">Cuscas</span>
+                        <h3 class="produto-nome">Cuca Doce de Leite</h3>
+                        <p class="produto-descricao">Cuca tradicional com recheio e cobertura de doce de leite cremoso. Uma explosão de sabor!</p>
+                        <span class="produto-peso">600g</span>
+                    </div>
+                </div>
+
+                <!-- Produto 3 -->
+                <div class="produto-card fade-in" data-categoria="cuscas">
+                    <div class="produto-imagem">
+                        <i class="fas fa-bread-slice"></i>
+                    </div>
+                    <div class="produto-info">
+                        <span class="produto-categoria">Cuscas</span>
+                        <h3 class="produto-nome">Cuca Coco com Doce de Leite</h3>
+                        <p class="produto-descricao">A combinação perfeita do coco com doce de leite em uma cuca macia e saborosa.</p>
+                        <span class="produto-peso">600g</span>
+                    </div>
+                </div>
+
+                <!-- Produto 4 -->
+                <div class="produto-card fade-in" data-categoria="cuscas">
+                    <div class="produto-imagem">
+                        <i class="fas fa-bread-slice"></i>
+                    </div>
+                    <div class="produto-info">
+                        <span class="produto-categoria">Cuscas</span>
+                        <h3 class="produto-nome">Cuca Frutas Cristalizadas</h3>
+                        <p class="produto-descricao">Cuca especial com frutas cristalizadas selecionadas. Tradição e sabor em cada fatia.</p>
+                        <span class="produto-peso">350g</span>
+                    </div>
+                </div>
+
+                <!-- Produto 5 -->
+                <div class="produto-card fade-in" data-categoria="bolachas">
+                    <div class="produto-imagem">
+                        <i class="fas fa-cookie"></i>
+                    </div>
+                    <div class="produto-info">
+                        <span class="produto-categoria">Bolachas</span>
+                        <h3 class="produto-nome">Biscoitos Artesanais</h3>
+                        <p class="produto-descricao">Variedade de biscoitos artesanais feitos com receitas tradicionais e ingredientes de qualidade.</p>
+                        <span class="produto-peso">400g</span>
+                    </div>
+                </div>
+
+                <!-- Produto 6 -->
+                <div class="produto-card fade-in" data-categoria="especiais">
+                    <div class="produto-imagem">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <div class="produto-info">
+                        <span class="produto-categoria">Especiais</span>
+                        <h3 class="produto-nome">Kits Especiais</h3>
+                        <p class="produto-descricao">Kits especiais com variedade de produtos para presentear com carinho e sabor.</p>
+                        <span class="produto-peso">Sob consulta</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Cuscas -->
+    <section class="cuscas" id="cuscas">
+        <div class="container">
+            <div class="cuscas-content">
+                <div class="cuscas-imagem fade-in">
+                    <i class="fas fa-bread-slice"></i>
+                </div>
+                <div class="cuscas-texto fade-in">
+                    <h2 class="section-title" style="text-align: left; margin-left: 0;">Nossas Cuscas</h2>
+                    <p style="font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--cor-dourado);">Tem sabor de tradição. Tem jeito de Biscoito Catarine.</p>
+                    <p>Nossas cuscas são preparadas com todo o cuidado para levar até você aquele sabor especial que lembra casa, família e bons momentos. Cada fatia é uma explosão de sabor que vai conquistar seu paladar.</p>
+                    <p>Trabalhamos com diversas opções: doce de leite, coco, frutas cristalizadas e muito mais. Todas feitas com ingredientes selecionados e aquela farofa crocante que todo mundo ama!</p>
+                    <a href="#contato" class="btn btn-primary" style="margin-top: 1rem;">Conheça nossas cuscas</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diferenciais -->
+    <section class="diferenciais">
+        <div class="container">
+            <h2 class="section-title">Por que escolher a Biscoito Catarine?</h2>
+            <p class="section-subtitle">Qualidade e tradição que você pode saborear</p>
+            
+            <div class="diferenciais-grid">
+                <div class="diferencial-card fade-in">
+                    <div class="diferencial-icon">🍪</div>
+                    <h3>Grande variedade</h3>
+                    <p>Uma seleção de sabores para todos os gostos e momentos especiais.</p>
+                </div>
+
+                <div class="diferencial-card fade-in">
+                    <div class="diferencial-icon">❤️</div>
+                    <h3>Feito com carinho</h3>
+                    <p>Cada produto recebe atenção especial em cada etapa da produção.</p>
+                </div>
+
+                <div class="diferencial-card fade-in">
+                    <div class="diferencial-icon">🌾</div>
+                    <h3>Qualidade</h3>
+                    <p>Ingredientes selecionados e cuidado na produção.</p>
+                </div>
+
+                <div class="diferencial-card fade-in">
+                    <div class="diferencial-icon">🏡</div>
+                    <h3>Sabor de casa</h3>
+                    <p>Receitas que despertam memórias e aproximam pessoas.</p>
+                </div>
+
+                <div class="diferencial-card fade-in">
+                    <div class="diferencial-icon">✨</div>
+                    <h3>Tradição</h3>
+                    <p>O sabor de receitas que atravessam gerações.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria -->
+    <section class="galeria">
+        <div class="container">
+            <h2 class="section-title">Galeria</h2>
+            <p class="section-subtitle">Momentos especiais com nossos produtos</p>
+            
+            <div class="galeria-grid">
+                <div class="galeria-item fade-in">
+                    <i class="fas fa-camera"></i>
+                </div>
+                <div class="galeria-item fade-in">
+                    <i class="fas fa-camera"></i>
+                </div>
+                <div class="galeria-item fade-in">
+                    <i class="fas fa-camera"></i>
+                </div>
+                <div class="galeria-item fade-in">
+                    <i class="fas fa-camera"></i>
+                </div>
+                <div class="galeria-item fade-in">
+                    <i class="fas fa-camera"></i>
+                </div>
+                <div class="galeria-item fade-in">
+                    <i class="fas fa-camera"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Revendedores -->
+    <section class="revendedores" id="revendedores">
+        <div class="container">
+            <div class="revendedores-content fade-in">
+                <h2 class="section-title">Seja um Revendedor</h2>
+                <p style="font-size: 1.3rem; margin-bottom: 1rem;">Quer levar a Biscoito Catarine para o seu negócio?</p>
+                <p style="font-size: 1.1rem; color: var(--cor-texto);">Seja nosso parceiro e ofereça aos seus clientes produtos que conquistam pelo sabor e pela qualidade. Atendemos supermercados, mercados, lojas, cafeterias e outros estabelecimentos.</p>
+                <a href="#contato" class="btn btn-primary" style="margin-top: 2rem; display: inline-block;">Quero ser um revendedor</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section class="contato" id="contato">
+        <div class="container">
+            <h2 class="section-title">Entre em Contato</h2>
+            <p class="section-subtitle">Estamos aqui para atender você</p>
+            
+            <div class="contato-content">
+                <div class="contato-info fade-in">
+                    <div class="contato-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <h3>WhatsApp</h3>
+                            <p>(XX) XXXXX-XXXX</p>
+                            <p style="font-size: 0.9rem; color: var(--cor-texto);">Atendimento rápido e personalizado</p>
+                        </div>
+                    </div>
+
+                    <div class="contato-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>E-mail</h3>
+                            <p>contato@biscoitocatarine.com.br</p>
+                            <p style="font-size: 0.9rem; color: var(--cor-texto);">Respondemos em até 24h</p>
+                        </div>
+                    </div>
+
+                    <div class="contato-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Endereço</h3>
+                            <p>Rua Exemplo, 123 - Bairro</p>
+                            <p>Cidade - Estado, CEP</p>
+                        </div>
+                    </div>
+
+                    <div class="contato-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Horário de Atendimento</h3>
+                            <p>Segunda a Sexta: 8h às 18h</p>
+                            <p>Sábado: 8h às 12h</p>
+                        </div>
+                    </div>
+
+                    <div class="contato-item">
+                        <i class="fab fa-instagram"></i>
+                        <div>
+                            <h3>Redes Sociais</h3>
+                            <p>@biscoitocatarine</p>
+                            <p style="font-size: 0.9rem; color: var(--cor-texto);">Siga-nos e fique por dentro das novidades</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contato-mapa fade-in">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <p style="position: absolute; color: var(--cor-branco); font-weight: 600; margin-top: 5rem;">Mapa de Localização</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Biscoito Catarine</h3>
+                <p>"Tradição, carinho e sabor em cada mordida."</p>
+                <p style="margin-top: 1rem;">Produzindo biscoitos, bolachas e cuscas com amor e qualidade desde sempre.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Links Rápidos</h3>
+                <p><a href="#inicio">Início</a></p>
+                <p><a href="#historia">Nossa História</a></p>
+                <p><a href="#produtos">Produtos</a></p>
+                <p><a href="#cuscas">Cuscas</a></p>
+                <p><a href="#revendedores">Revendedores</a></p>
+                <p><a href="#contato">Contato</a></p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contato</h3>
+                <p><i class="fas fa-phone" style="margin-right: 0.5rem;"></i> (XX) XXXXX-XXXX</p>
+                <p><i class="fas fa-envelope" style="margin-right: 0.5rem;"></i> contato@biscoitocatarine.com.br</p>
+                <p><i class="fas fa-map-marker-alt" style="margin-right: 0.5rem;"></i> Rua Exemplo, 123</p>
+                
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Biscoito Catarine. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/55XXXXXXXXXXX" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script>
+        // Menu fixo ao rolar
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            } else {
+                header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
+            }
+        });
+
+        // Menu móvel
+        const mobileMenu = document.getElementById('mobileMenu');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenu.addEventListener('click', function() {
+            navLinks.classList.toggle('ativo');
+            mobileMenu.classList.toggle('ativo');
+        });
+
+        // Fechar menu ao clicar em um link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                navLinks.classList.remove('ativo');
+                mobileMenu.classList.remove('ativo');
+            });
+        });
+
+        // Filtros de produtos
+        const filtroBtns = document.querySelectorAll('.filtro-btn');
+        const produtosCards = document.querySelectorAll('.produto-card');
+
+        filtroBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove classe ativo de todos os botões
+                filtroBtns.forEach(b => b.classList.remove('ativo'));
+                // Adiciona classe ativo no botão clicado
+                this.classList.add('ativo');
+
+                const filtro = this.getAttribute('data-filtro');
+
+                produtosCards.forEach(card => {
+                    if (filtro === 'todos' || card.getAttribute('data-categoria') === filtro) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'scale(1)';
+                        }, 10);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'scale(0.8)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // Animação de scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll para links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Efeito parallax suave no hero
+        window.addEventListener('scroll', function() {
+            const hero = document.querySelector('.hero');
+            const scrolled = window.pageYOffset;
+            hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+        });
+    </script>
+</body>
+</html>
